@@ -27,6 +27,6 @@ module.exports = {
   extension: ['js', 'ts'],
   retries: process.env.CI ? 2 : 0,
   parallel: !!process.env.PARALLEL,
-  timeout: 25 * 1000,
+  timeout: 60 * 1000,
   reporter: process.env.CI ? 'spec' : 'dot',
 };
