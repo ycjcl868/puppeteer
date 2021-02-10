@@ -500,7 +500,7 @@ describe('waittask specs', function () {
       await waitForSelector;
       expect(boxFound).toBe(true);
     });
-    it('should wait for visible', async () => {
+    itFailsFirefox('should wait for visible', async () => {
       const { page } = getTestState();
 
       let divFound = false;
