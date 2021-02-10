@@ -229,21 +229,8 @@ export const setupTestBrowserHooks = () => {
 
 export const setupTestPageAndContextHooks = () => {
   beforeEach(async () => {
-    let attempts = 0;
-    async function create() {
-      try {
-        attempts++;
-        state.context = await state.browser.createIncognitoBrowserContext();
-        state.page = await state.context.newPage();
-      } catch (error) {
-        if (attempts > 4) {
-          throw error;
-        }
-        console.log(`setupTestPage error: retrying, attempt ${attempts}`);
-        await create();
-      }
-    }
-    await create();
+    state.context = await state.browser.createIncognitoBrowserContext();
+    state.page = await state.context.newPage();
   });
 
   afterEach(async () => {
