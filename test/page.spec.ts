@@ -1344,7 +1344,7 @@ describe('Page', function () {
     });
   });
 
-  describe('Page.addStyleTag', function () {
+  describeFailsFirefox('Page.addStyleTag', function () {
     it('should throw an error if no options are provided', async () => {
       const { page } = getTestState();
 
