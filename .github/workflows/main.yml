@@ -44,7 +44,7 @@ jobs:
         env:
           FIREFOX: true
         run: |
-          DEBUG=puppeteer:* xvfb-run --auto-servernum npm run funit
+          xvfb-run --auto-servernum npm run funit
 
       - name: Run code checks
         run: |
